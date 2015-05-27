@@ -54,6 +54,7 @@ for x in select(cur=cursor,strSQL=findtable):
 
 tableDDL += ');'
 cursor.close()
+cursor2.close()
 
 fo = open(global_table_name + ".sql", "w")
 fo.write(tableDDL)
