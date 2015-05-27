@@ -1,3 +1,9 @@
+--creates a structure to hold the data in the general payments file. 
+--Per CMS README
+--File #1 - OPPR_ALL_DTL_GNRL_12192014.csv: 
+--This file contains the data set for identified General Payments for the 2013 program year, including the 
+--additional payment records added to the publication during the data refresh in December 2014. General Payments are defined --as payments or other transfers of value not made in connection with a research agreement or research protocol.
+
 CREATE TABLE CMS.OPPR_ALL_DTL_GNRL_12192014
 (
    general_transaction_id integer,
@@ -65,6 +71,7 @@ CREATE TABLE CMS.OPPR_ALL_DTL_GNRL_12192014
    delay_in_publication_of_general_payment_indicator varchar(3)
 );
 
+---loads 2.6+ million records. May take between 4 and 10 minutes depending on underlying cluster size
 COPY CMS.OPPR_ALL_DTL_GNRL_12192014 
 from 's3://crosbie-cms-open-payments/OPPR_ALL_DTL_GNRL_12192014.csv'  
 REGION 'us-west-2'
@@ -72,3 +79,10 @@ CREDENTIALS 'aws_access_key_id=YOUR_KEY_HERE;aws_secret_access_key=YOUR_SECRET_H
 IGNOREHEADER 1
 DATEFORMAT AS 'MM/DD/YYYY'
 csv;
+
+--on error, use this query to find last load record that caused error:
+--select * from stl_load_errors
+--WHERE starttime = (select max(starttime) from stl_load_errors)
+
+
+
