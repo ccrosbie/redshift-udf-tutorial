@@ -36,6 +36,13 @@ CREATE TABLE CMS.OPPR_ALL_DTL_OWNRSHP_12192014
    terms_of_interest varchar(492)
 );
 
+COPY CMS.OPPR_ALL_DTL_OWNRSHP_12192014 
+from 's3://crosbie-cms-open-payments/OPPR_ALL_DTL_OWNRSHP_12192014.csv'  
+REGION 'us-west-2'
+CREDENTIALS 'aws_access_key_id=YOUR_KEY_HERE;aws_secret_access_key=YOUR_SECRET_HERE'
+IGNOREHEADER 1
+DATEFORMAT AS 'MM/DD/YYYY'
+csv;
 
 
 
