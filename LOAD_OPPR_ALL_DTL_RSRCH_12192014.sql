@@ -72,7 +72,10 @@ create TABLE CMS.OPPR_ALL_DTL_RSRCH_12192014
    clinicaltrials_gov_identifier varchar(12),
    research_information_link varchar(85),
    context_of_research varchar(473)
-);
+)
+distkey(physician_profile_id)
+sortkey(physician_profile_id)
+;
 
 COPY CMS.OPPR_ALL_DTL_RSRCH_12192014 
 from 's3://crosbie-cms-open-payments/OPPR_ALL_DTL_RSRCH_12192014.csv'  
