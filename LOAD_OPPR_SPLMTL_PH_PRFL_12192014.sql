@@ -42,7 +42,10 @@ CREATE TABLE CMS.OPPR_SPLMTL_PH_PRFL_12192014
    physician_states_on_licenses3  char(2),
    physician_states_on_licenses4 char(2),
    physician_states_on_licenses5  char(2)
-);
+)
+distkey(physician_profile_id)
+sortkey(physician_profile_id)
+;
 
 COPY CMS.OPPR_SPLMTL_PH_PRFL_12192014
 from 's3://crosbie-cms-open-payments/OPPR_SPLMTL_PH_PRFL_12192014.csv'  
