@@ -47,7 +47,7 @@ cursor = conn.cursor()
 cursor2 = conn.cursor()
 tableDDL = "CREATE TABLE " + export_table + " ("
 for x in select(cur=cursor,strSQL=findtable):
-    findColLengthSQL =  "select max(char_length(" + x[0] + ")) + 1 from " + global_table_name + ";"
+    findColLengthSQL =  "select max(char_length(" + x[0] + ")) + 1 from CMS." + global_table_name + ";"
     for y in select(cur=cursor2,strSQL=findColLengthSQL):
         tableDDL += x[0] + " varchar(" + str(y[0]) + '),'
         print x[0]
@@ -56,7 +56,7 @@ tableDDL += ');'
 cursor.close()
 cursor2.close()
 
-fo = open(global_table_name + ".sql", "w")
+fo = open(export_table + ".sql", "w")
 fo.write(tableDDL)
 fo.close()
 
