@@ -69,7 +69,10 @@ CREATE TABLE CMS.OPPR_ALL_DTL_GNRL_12192014
    third_party_equals_covered_recipient_indicator varchar(4),
    contextual_information varchar(478),
    delay_in_publication_of_general_payment_indicator varchar(3)
-);
+)
+distkey(physician_profile_id)
+sortkey(physician_profile_id)
+;
 
 ---loads 2.6+ million records. May take between 4 and 10 minutes depending on underlying cluster size
 COPY CMS.OPPR_ALL_DTL_GNRL_12192014 
