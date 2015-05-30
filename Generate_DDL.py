@@ -6,6 +6,7 @@ import psycopg2 as redshift
 #PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin/
 
 global_table_name = "unstructured_table_here"
+global_table_name = lower(global_table_name)
 export_table = "CMS.x"
 
 configuration = { 'dbname': 'YOURDBNAMEHERE',
