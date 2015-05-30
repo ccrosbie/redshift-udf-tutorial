@@ -34,7 +34,10 @@ CREATE TABLE CMS.OPPR_ALL_DTL_OWNRSHP_12192014
    dollar_amount_invested float,
    value_of_interest float,
    terms_of_interest varchar(492)
-);
+)
+distkey(physician_profile_id)
+sortkey(physician_profile_id)
+;
 
 COPY CMS.OPPR_ALL_DTL_OWNRSHP_12192014 
 from 's3://crosbie-cms-open-payments/OPPR_ALL_DTL_OWNRSHP_12192014.csv'  
