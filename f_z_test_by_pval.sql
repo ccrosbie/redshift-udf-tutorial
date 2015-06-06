@@ -9,7 +9,9 @@ create function f_z_test_by_pval(alpha float, x_bar float, test_val float, sigma
 -- n = size of the sample 
 
  RETURNS varchar
- --OUTPUT: an accept or reject based on the alpha value passed in. 
+ --OUTPUT: Returns a simple "Is Signficiant" or "Not Sigificant". 
+ --In a real analysis, would probably use the Z-scores but this makes
+ --for a clean and easy to intepret demo. 
 STABLE 
 AS $$
 
@@ -29,8 +31,9 @@ AS $$
  #that the observed spatial pattern is the result of random processes, 
  # so you can reject the null hypothesis. 
  if p <= alpha:
-   return 'Accept'
+   #rejecting the null hypothesis
+   return 'Statistically Significant'
  else:
-   return 'Reject'
+   return 'May Have Occured By Random Chance'
  
 $$LANGUAGE plpythonu;
