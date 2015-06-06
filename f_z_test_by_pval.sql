@@ -15,9 +15,18 @@ AS $$
  import scipy.stats as st
  import math as math
 
+ #Z scores are measures of standard deviation. 
+ #For example, if this calculation returns 1.96,it is interpreted 
+ #as 1.96 standard deviations away from the mean
  z = (x_bar - test_val) / (sigma / math.sqrt(n)) 
- 
+
+ #The p-value is the probability that you have falsely rejected the null hypothesis
  p = st.norm.cdf(z)
+
+ #in a Z test, the null hypothesis is that this distribution occured due to chance. 
+ #When the p-value is very small, it means it is very unlikely (small probability) 
+ #that the observed spatial pattern is the result of random processes, 
+ # so you can reject the null hypothesis. 
  if p <= alpha:
    return 'Accept'
  else:
