@@ -9,9 +9,9 @@ create function f_z_test_by_pval(alpha float, x_bar float, test_val float, sigma
 -- n = size of the sample 
 
  RETURNS varchar
- --OUTPUT: Returns a simple "Is Signficiant" or "Not Sigificant". 
+ --OUTPUT: Returns a simple "Is Significant" or "May have occured by random chance". 
  --In a real analysis, would probably use the Z-scores but this makes
- --for a clean and easy to intepret demo. 
+ --for a clean and easiy interpretable demo. 
 STABLE 
 AS $$
 
