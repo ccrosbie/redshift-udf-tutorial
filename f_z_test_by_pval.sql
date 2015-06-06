@@ -34,6 +34,6 @@ AS $$
    #rejecting the null hypothesis
    return 'Statistically Significant'
  else:
-   return 'May Have Occured By Random Chance'
+   return 'May Have Occurred By Random Chance'
  
 $$LANGUAGE plpythonu;
