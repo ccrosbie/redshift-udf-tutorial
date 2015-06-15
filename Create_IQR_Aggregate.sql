@@ -23,7 +23,7 @@ AS $$
 	import numpy as numpy
 	if a:
    		arr = numpy.array(a.split(","),numpy.float)  
-   		x = numpy.percentile(arr, 75) #- numpy.percentile(arr, 25)
+   		x = numpy.percentile(arr, 75) - numpy.percentile(arr, 25)
 	else:
    		x = 0
 $$ LANGUAGE plpythonu;
