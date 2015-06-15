@@ -26,6 +26,8 @@ AS $$
    		x = numpy.percentile(arr, 75) - numpy.percentile(arr, 25)
 	else:
    		x = 0
+   		
+   	return x
 $$ LANGUAGE plpythonu;
 
 
