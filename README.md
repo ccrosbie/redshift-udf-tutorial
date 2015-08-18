@@ -7,8 +7,7 @@ To make Amazon Redshift an even more enticing option for exploration of public h
 
 ##Description of files
 
-Update CMS.STAT_RELEVANT_PHYSICIAN_SPECIALTY.SQL
-
+###Update CMS.STAT_RELEVANT_PHYSICIAN_SPECIALTY.SQL
 
 
 General Payments: Payments or other transfers of value not made in connection with a research agreement or research protocol. 
